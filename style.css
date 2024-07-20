@@ -11,7 +11,25 @@ body {
     color: #ffffff;
 }
 .wrap {
-    width: 90%;
     margin: auto;
+    width: 1200px;
     background-color: red;
+}
+@media (min-width: 1250px) {
+    .wrap {
+        width: 1200px;
+        background-color: red;
+    }
+}
+@media (min-width: 500px) and (max-width: 1199px) {
+    .wrap {
+        width: 80%;
+        background-color: blue;
+    }
+}
+@media (max-width: 500px) {
+    .wrap {
+        width: 90%;
+        background-color: green;
+    }
 }
