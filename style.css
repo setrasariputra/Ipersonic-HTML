@@ -26,18 +26,18 @@ body {
     display: inline-block;
     color: #ffffff;
     text-decoration: none;
-    border-radius: 3px;
+    padding: 10px 20px 10px 20px;
 }
 .btn.btn-orange {
-    background-color: orangered
+    background-color: #ff7518;
 }
 .btn.btn-small {
     padding: 3px 7px 3px 7px;
-    /* padding-top: 3px;
-    padding-right: 7px;
-    padding-bottom: 3px;
-    padding-left: 7px; */
     font-size: 14px;
+}
+.btn.btn-large {
+    padding: 20px 40px 20px 40px;
+    font-size: 16px;
 }
 .brand-logo {
     padding: 10px 0px 10px 0px;
@@ -92,6 +92,18 @@ display: block;
 h1 {
     font-size: 50px;
     font-weight: normal;
+}
+.jumbotron {
+    box-sizing: border-box;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background: linear-gradient(to bottom, #e2ebf0, #d0dae0);
+}
+p {
+    line-height: 1.5;
+}
+p.font-size-big {
+    font-size: 18px;
 }
 @media (min-width: 1250px) {
     .wrap {
