@@ -99,6 +99,15 @@ h1 {
     padding-bottom: 40px;
     background: linear-gradient(to bottom, #e2ebf0, #d0dae0);
 }
+.main-content {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.footer-content {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+}
 p {
     line-height: 1.5;
 }
