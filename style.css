@@ -114,6 +114,13 @@ p {
 p.font-size-big {
     font-size: 18px;
 }
+a.link {
+    color: #3a8be5;
+    text-decoration: none;
+}
+a.link:hover {
+    text-decoration: underline;
+}
 @media (min-width: 1250px) {
     .wrap {
         width: 1200px;
