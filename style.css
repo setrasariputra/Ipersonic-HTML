@@ -121,6 +121,33 @@ a.link {
 a.link:hover {
     text-decoration: underline;
 }
+h1.title-medium-light {
+    color: #333333;
+    font-weight: normal;
+    font-size: 40px;
+}
+hr {
+    border-top: 1px solid #e6e6e6;
+    border-bottom: none;
+}
+.quiz-content {
+    margin-top: 20px;
+}
+.quiz-content ul.quiz-title {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+.quiz-content ul.quiz-title li {
+    display: inline-block;
+    padding: 5px 10px 5px 10px;
+    border-radius: 3px;
+    color: #999999;
+}
+.quiz-content ul.quiz-title li.active {
+    background-color: #aaaaaa;
+    color: #ffffff;
+}
 @media (min-width: 1250px) {
     .wrap {
         width: 1200px;
