@@ -94,7 +94,8 @@ display: block;
     padding-top: 13px;
     padding-bottom: 13px;
     text-align: right;
-}
+    display: none;
+}    
 .button-mobile-menu a {
     color: #ffffff;
     text-decoration: none;
@@ -178,6 +179,9 @@ hr {
     .topmenu ul {
         display: block;
     }    
+    .button-mobile-menu {
+        display: none;
+    }        
 }
 @media (min-width: 767px) and (max-width: 1249px) {
     .wrap {
@@ -197,6 +201,9 @@ hr {
     .grid-container {
         grid-template-columns: 1fr 1fr;
     }
+    .button-mobile-menu {
+        display: none;
+    }    
 }
 @media (max-width: 500px) {
     .wrap {
