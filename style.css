@@ -45,7 +45,7 @@ body {
     padding-bottom: 10px; */
 }
 .topmenu {
-    
+    text-align: right;
 }
 .topmenu ul {
     display: block;
@@ -55,6 +55,7 @@ body {
 }
 .topmenu ul li {
     display: inline-block;
+    text-align: left;
 }
 .topmenu ul li a {
     display: block;
