@@ -1,0 +1,1 @@
+alert('tes js from file')
