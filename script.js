@@ -39,6 +39,32 @@ var result = {
     '1211': '4.html',
 }
 
+// var sampleInner = document.querySelector('.sample-inner');
+// sampleInner.innerHTML = 'Text from JS';
+
+var displayQOptions = document.querySelector('.display_q_options');
+var quizHTML = '<div class="quiz-content">';
+quizHTML += '<ul class="quiz-title">';
+quizHTML += '<li class="active">Langkah 1</li>';
+quizHTML += '<li>Langkah 2</li>';
+quizHTML += '<li>Langkah 3</li>';
+quizHTML += '<li>Langkah 4</li>';
+quizHTML += '</ul>';
+quizHTML += '<div class="quiz-options">';
+quizHTML += '<div class="quiz-selected">';
+quizHTML += '<p>Saya agak ramah, membuka hati dan saya suka berada bersama-sama dengan orang lain.</p>';
+quizHTML += '<a href="#" class="btn btn-orange"><i class="fa fa-play" aria-hidden="true" style="font-size: 12px;"></i>&nbsp;&nbsp;Hal ini berlaku untuk saya.</a>';
+quizHTML += '</div>';
+quizHTML += '<div class="quiz-selected">';
+quizHTML += '<p>Saya membutuhkan banyak waktu untuk sendirian dan agak hati-hati untuk memulai hubungan baru.</p>';
+quizHTML += '<a href="#" class="btn btn-orange"><i class="fa fa-play" aria-hidden="true" style="font-size: 12px;"></i>&nbsp;&nbsp;Hal ini berlaku untuk saya.</a>';
+quizHTML += '</div>';
+quizHTML += '</div>';
+quizHTML += '</div>';
+
+displayQOptions.innerHTML = quizHTML;
+
+
 document.querySelector('.mobile-menu-trigger').addEventListener('click', function() {
     // show responsive menu
     var menu = document.querySelector('.topmenu ul');
