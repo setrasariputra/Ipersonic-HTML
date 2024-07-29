@@ -216,7 +216,13 @@ hr {
     .button-mobile-menu {
         display: block;
     }
+    .topmenu {
+        text-align: left;
+    }
     .topmenu ul {
         display: none;
+    }
+    .topmenu ul li {
+        width: 100%;
     }
 }
