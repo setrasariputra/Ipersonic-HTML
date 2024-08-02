@@ -12,6 +12,20 @@
 // }
 // showAlert()
 
+// var myScore = 75;
+// if(myScore >= 70) {
+//     alert('LULUS!')
+// }else{
+//     alert('GAGAL')
+// }
+
+// var nomorRumah = 50;
+// if(nomorRumah == 75) {
+//     alert('Ini rumah si Budi')
+// }else{
+//     alert('Ini bukan rumah si Budi')
+// }
+
 function mobileMenuTrigger()
 {
     document.querySelector('.mobile-menu-trigger').addEventListener('click', function() {
@@ -66,10 +80,10 @@ var result = {
 
 function showQuestion(totalAnswer, q_options)
 {
-    // target div class yang akan ditampilkan konten quiz
+    // target div class yang akan ditampilkan konten quiznya
     var displayQOptions = document.querySelector('.display_q_options');
     
-    // login display quiz
+    // logika display quiz
     var quizHTML = '<div class="quiz-content">';
     quizHTML += '<ul class="quiz-title">';
     // looping langkah sesuai jumlah total pertanyaan
