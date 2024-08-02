@@ -133,10 +133,12 @@ a.link {
 a.link:hover {
     text-decoration: underline;
 }
-h1.title-medium-light {
+h1 {
+    font-size: 40px;
+}
+.title-medium-light {
     color: #333333;
     font-weight: normal;
-    font-size: 40px;
 }
 hr {
     border-top: 1px solid #e6e6e6;

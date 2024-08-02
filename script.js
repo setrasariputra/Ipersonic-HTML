@@ -13,7 +13,21 @@
 // var testArray = [10, 6, "WIsnu Kuncoro", 5];
 // alert(testArray[3])
 
-var q_options = [
+function mobileMenuTrigger()
+{
+    document.querySelector('.mobile-menu-trigger').addEventListener('click', function() {
+        // show responsive menu
+        var menu = document.querySelector('.topmenu ul');
+        if(menu.style.display === 'block') {
+            menu.style.display = 'none';
+        }else{
+            menu.style.display = 'block';
+        }
+    });
+}
+mobileMenuTrigger();
+
+const q_options = [
     {
         1: "Saya agak ramah, membuka hati dan saya suka berada bersama-sama dengan orang lain.",
         2: "Saya membutuhkan banyak waktu untuk sendirian dan agak hati-hati untuk memulai hubungan baru."
@@ -37,40 +51,71 @@ var result = {
     '1222': '2.html',
     '1212': '3.html',
     '1211': '4.html',
+    '1221': '5.html',
+    '1121': '6.html',
+    '1122': '7.html',
+    '1112': '8.html',
+    '1111': '9.html',
+    '2111': '10.html',
+    '2121': '11.html',
+    '2122': '12.html',
+    '2112': '13.html',
+    '2212': '14.html',
+    '2211': '15.html',
+    '2221': '16.html',
 }
 
 // var sampleInner = document.querySelector('.sample-inner');
 // sampleInner.innerHTML = 'Text from JS';
 
-var displayQOptions = document.querySelector('.display_q_options');
-var quizHTML = '<div class="quiz-content">';
-quizHTML += '<ul class="quiz-title">';
-quizHTML += '<li class="active">Langkah 1</li>';
-quizHTML += '<li>Langkah 2</li>';
-quizHTML += '<li>Langkah 3</li>';
-quizHTML += '<li>Langkah 4</li>';
-quizHTML += '</ul>';
-quizHTML += '<div class="quiz-options">';
-quizHTML += '<div class="quiz-selected">';
-quizHTML += '<p>Saya agak ramah, membuka hati dan saya suka berada bersama-sama dengan orang lain.</p>';
-quizHTML += '<a href="#" class="btn btn-orange"><i class="fa fa-play" aria-hidden="true" style="font-size: 12px;"></i>&nbsp;&nbsp;Hal ini berlaku untuk saya.</a>';
-quizHTML += '</div>';
-quizHTML += '<div class="quiz-selected">';
-quizHTML += '<p>Saya membutuhkan banyak waktu untuk sendirian dan agak hati-hati untuk memulai hubungan baru.</p>';
-quizHTML += '<a href="#" class="btn btn-orange"><i class="fa fa-play" aria-hidden="true" style="font-size: 12px;"></i>&nbsp;&nbsp;Hal ini berlaku untuk saya.</a>';
-quizHTML += '</div>';
-quizHTML += '</div>';
-quizHTML += '</div>';
+var answer = "";
 
-displayQOptions.innerHTML = quizHTML;
+function showQuestion(totalAnswer, q_options)
+{
+    var displayQOptions = document.querySelector('.display_q_options');
 
-
-document.querySelector('.mobile-menu-trigger').addEventListener('click', function() {
-    // show responsive menu
-    var menu = document.querySelector('.topmenu ul');
-    if(menu.style.display === 'block') {
-        menu.style.display = 'none';
-    }else{
-        menu.style.display = 'block';
+    var quizHTML = '<div class="quiz-content">';
+    quizHTML += '<ul class="quiz-title">';
+    // looping langkah 1 sampai langkah 4
+    for(var x = 1; x <= q_options.length; x++) {
+        if(x == totalAnswer + 1) {
+            quizHTML += '<li class="active">Langkah '+x+'</li>';
+        }else{
+            quizHTML += '<li>Langkah '+x+'</li>';
+        }
     }
-});
+    quizHTML += '</ul>';
+    quizHTML += '<div class="quiz-options">';
+    // lopping pilihan kiri atau pilihan kanan
+    for(var x = 1; x <= 2; x++) {
+        quizHTML += '<div class="quiz-selected">';
+        quizHTML += '<p>'+q_options[totalAnswer][x]+'</p>';
+        quizHTML += '<a href="#" class="btn btn-orange choose-answer" data="'+x+'"><i class="fa fa-play" aria-hidden="true" style="font-size: 12px;"></i>&nbsp;&nbsp;Hal ini berlaku untuk saya.</a>';
+        quizHTML += '</div>';
+    }
+    quizHTML += '</div>';
+    quizHTML += '</div>';
+
+    displayQOptions.innerHTML = quizHTML;
+
+    var answerButtons = document.querySelectorAll(".choose-answer");
+    answerButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            var valueButton = button.getAttribute("data");
+            answer = answer + valueButton;
+
+            totalAnswer = answer.length;
+            if(totalAnswer < q_options.length) {
+                showQuestion(totalAnswer, q_options)
+            }else{
+                displayQOptions.innerHTML = '<h3 class="title-medium-light">Terima kasih telah mengisi kuesioner ini!</h3>';
+                
+                var resultPage = result[answer];
+                displayQOptions.innerHTML += "<br /><br />";
+                displayQOptions.innerHTML += "<a href='"+resultPage+"' class='btn btn-orange'>Lihat Hasilnya &#9658;</a>";                
+            }
+        });
+    });    
+}
+
+showQuestion(answer.length, q_options)
