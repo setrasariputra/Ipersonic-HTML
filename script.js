@@ -6,6 +6,12 @@
 // var myArray = ['Wisnu', 'Budi', 'Agus']; // tipedata array
 // var myScore = 87; // tipedata angka, number, integer
 
+// function showAlert()
+// {
+//     alert('tes Alert');
+// }
+// showAlert()
+
 function mobileMenuTrigger()
 {
     document.querySelector('.mobile-menu-trigger').addEventListener('click', function() {
@@ -60,7 +66,10 @@ var result = {
 
 function showQuestion(totalAnswer, q_options)
 {
+    // target div class yang akan ditampilkan konten quiz
     var displayQOptions = document.querySelector('.display_q_options');
+    
+    // login display quiz
     var quizHTML = '<div class="quiz-content">';
     quizHTML += '<ul class="quiz-title">';
     // looping langkah sesuai jumlah total pertanyaan
@@ -75,6 +84,7 @@ function showQuestion(totalAnswer, q_options)
     quizHTML += '</ul>';
     quizHTML += '</div>';
 
+    // target div class isi dengan data quizHTML
     displayQOptions.innerHTML = quizHTML;
 }
 var totalAnswer = 0;
