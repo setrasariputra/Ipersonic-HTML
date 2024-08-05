@@ -31,6 +31,19 @@
 // var displayAlert = 'Nama saya '+myName+' umur '+myAge;
 // alert(displayAlert)
 
+// var sampleLoopingContainer = document.querySelector('.sample-looping');
+// var loopData = '';
+// for(var i = 1; i <= 10; i = i + 3) {
+//     loopData += i+' ';
+// }
+// sampleLoopingContainer.innerHTML = loopData;
+
+var testButton = document.querySelector('.test-button');
+testButton.addEventListener("click", function() {
+    var fullName = testButton.getAttribute("id");
+    alert(fullName)
+});
+
 function mobileMenuTrigger()
 {
     document.querySelector('.mobile-menu-trigger').addEventListener('click', function() {
@@ -83,6 +96,8 @@ var result = {
     '2221': '16.html',
 }
 
+var answer = "";
+
 function showQuestion(totalAnswer, q_options)
 {
     // target div class yang akan ditampilkan konten quiznya
@@ -117,8 +132,19 @@ function showQuestion(totalAnswer, q_options)
 
     // target div class isi dengan data quizHTML
     displayQOptions.innerHTML = quizHTML;
+
+    // Logika untuk menyimpan pilihan jawaban
+    var answerButtons = document.querySelectorAll(".choose-answer");
+    answerButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            var valueButton = button.getAttribute("data");
+            alert(valueButton);
+            // answer = answer + valueButton;
+        });
+    });
+
 }
-var totalAnswer = 3;
+var totalAnswer = 0;
 showQuestion(totalAnswer, q_options)
 
 
