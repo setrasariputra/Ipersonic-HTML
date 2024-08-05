@@ -26,6 +26,11 @@
 //     alert('Ini bukan rumah si Budi')
 // }
 
+// var myName = 'Wisnu';
+// var myAge = 30;
+// var displayAlert = 'Nama saya '+myName+' umur '+myAge;
+// alert(displayAlert)
+
 function mobileMenuTrigger()
 {
     document.querySelector('.mobile-menu-trigger').addEventListener('click', function() {
@@ -85,6 +90,7 @@ function showQuestion(totalAnswer, q_options)
     
     // logika display quiz
     var quizHTML = '<div class="quiz-content">';
+    // menampilkan langkah
     quizHTML += '<ul class="quiz-title">';
     // looping langkah sesuai jumlah total pertanyaan
     for(var x = 1; x <= q_options.length; x++) {
@@ -98,10 +104,21 @@ function showQuestion(totalAnswer, q_options)
     quizHTML += '</ul>';
     quizHTML += '</div>';
 
+    // menampilkan pilihan jawaban
+    quizHTML += '<div class="quiz-options">';
+    // looping pilihan jawaban
+    for(var x = 1; x <= 2; x++) {
+        quizHTML += '<div class="quiz-selected">';
+        quizHTML += '<p>'+q_options[totalAnswer][x]+'</p>';
+        quizHTML += '<a href="#" class="btn btn-orange choose-answer" data="'+x+'"><i class="fa fa-play" aria-hidden="true" style="font-size: 12px;"></i>&nbsp;&nbsp;Hal ini berlaku untuk saya.</a>';
+        quizHTML += '</div>';
+    }  
+    quizHTML += '</div>';
+
     // target div class isi dengan data quizHTML
     displayQOptions.innerHTML = quizHTML;
 }
-var totalAnswer = 0;
+var totalAnswer = 3;
 showQuestion(totalAnswer, q_options)
 
 
